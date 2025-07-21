@@ -1,1 +1,0 @@
-import{j as e}from"./index-EX7Gt1O6.js";const r=()=>e.jsx("footer",{className:"bg-primary2 py-6",children:e.jsx("div",{className:"text-center",children:e.jsx("p",{className:"text-black text-sm font-medium",children:"© 2025 by Abhyudaya Singh. All rights reserved."})})});export{r as default};
