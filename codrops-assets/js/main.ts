@@ -1,5 +1,3 @@
-import { Starfield } from '../starfield/Starfield';
-
 
 import Commons from "./classes/Commons";
 import * as THREE from "three";
@@ -13,7 +11,7 @@ import PostProcessing from "./classes/PostProcessing";
 class App {
   private commons!: Commons;
   private postProcessing!: PostProcessing;
-  private starfield!: Starfield; // ✅ Starfield instance
+  
 
   private scene!: THREE.Scene;
   private texts!: Array<WebGLText>;
@@ -27,7 +25,6 @@ class App {
       this.commons.init();
 
       this.createScene();
-      this.createStarfield(); // ✅ Create stars
       this.createWebGLTexts();
       this.createPostProcessing();
       this.addEventListeners();
@@ -40,9 +37,7 @@ class App {
     this.scene = new THREE.Scene();
   }
 
-  private createStarfield() {
-    this.starfield = new Starfield(this.scene); // ✅ Starfield added to scene
-  }
+ 
 
   private createWebGLTexts() {
     const texts = document.querySelectorAll('[data-animation="webgl-text"]');
@@ -74,9 +69,7 @@ class App {
       this.texts.forEach((el) => el.update());
     }
 
-    if (this.starfield) {
-      this.starfield.update(); // ✅ Starfield animation per frame
-    }
+    
 
     this.postProcessing.update();
 
